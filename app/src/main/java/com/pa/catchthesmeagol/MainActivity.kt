@@ -27,10 +27,18 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        //// random background image
+        val images = intArrayOf(R.drawable.img_0, R.drawable.img_1, R.drawable.img_2, R.drawable.img_3, R.drawable.img_4, R.drawable.img_5)
+        val imageId = (Math.random() * images.size).toInt()
+        mainContainer.setBackgroundResource(images[imageId])
+
+
         score = 0
         imageArray = arrayListOf(imageView,imageView2,imageView3,imageView4,imageView5,imageView6,imageView7,imageView8,imageView8,imageView9)
 
         hideSmeagols()
+
+
 
         //// countdown for 30 seconds on the timer text
         object: CountDownTimer(30000, 1000) {
